@@ -1,0 +1,61 @@
+.main-banner {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 75px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-banner h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px;
+  margin-bottom: 0px;
+  padding: 10px;
+  padding-top: 14px;
+}
+
+.chef-banner {
+  margin-right: 12px;
+  margin-top: 6px;
+}
+
+.chef-banner .avatar-bordered {
+  width:40px;
+}
+
+.card-meal {
+  height: 360px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  margin-top: 16px;
+  background-image: url(https://images.unsplash.com/photo-1468777675496-5782faaea55b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-meal p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-other-meals {
+  padding: 16px;
+  background: white;
+  margin-top: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 60px;
+}
+
+.card-product-other-meals h3 {
+  font-size: 18px;
+  margin-top: 8px;
+  text-align: center;
+  margin-bottom: 10px;
+}

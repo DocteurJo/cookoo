@@ -1,0 +1,21 @@
+<div class="cards-container">
+  <div class="cards" id="meal-results">
+    <% meals.each do |meal| %>
+      <%= link_to meal_path(meal), class: 'link-to-text-color' do %>
+        <div class="card-trip">
+          <img src=<%= meal.photo %> />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= meal.title %></h2>
+              <p><%= meal.category %></p>
+              <p class="card-trip-pricing">EUR <%= meal.price %></p>
+            </div>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

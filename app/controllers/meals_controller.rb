@@ -7,6 +7,7 @@ class MealsController < ApplicationController
   def show
     @meal = Meal.find(params[:id])
     authorize @meal
+    @order = @meal.orders.new
   end
 
   def new

@@ -3,22 +3,17 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
-  def new
-    @order = Order.new(order_params)
-  end
-
   def create
-    @order = Order.new(order_params)
-    if @order.save
-      redirect_to order_path(@order)
-    else
-      render :new
-    end
+    @meal = Meal.find(params[:meal_id])
+    @order = @meal.orders.new(order_params)
+    @order.user = current_user
+    @order.save
+    redirect_to order_path(@order)
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:time, :user, :meal)
+    params.require(:order).permit(:time, :quantity)
   end
 end

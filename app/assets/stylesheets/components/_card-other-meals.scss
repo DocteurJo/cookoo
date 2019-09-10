@@ -1,0 +1,23 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-bottom: -10px;
+}
+
+.card-other-meals{
+  margin-bottom: 0px;
+}
+
+.card-other-meals img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-other-meals p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
