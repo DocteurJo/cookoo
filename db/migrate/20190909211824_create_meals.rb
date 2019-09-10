@@ -7,7 +7,7 @@ class CreateMeals < ActiveRecord::Migration[5.2]
       t.float :price
       t.integer :quantity
       t.string :photo
-      t.references :user, foreign_key: true
+      t.integer :cook_id
 
       t.timestamps
     end
