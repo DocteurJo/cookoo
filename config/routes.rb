@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'users#index'
+  root to: 'meals#index'
 
-  resources :meals, only: [ :index, :show, :new, :create ]
+  resources :meals, only: [ :index, :show, :new, :create ] do
+    resources :orders, only: :create
+  end
 
-  resources :orders, only: [ :show, :new, :create ] do
+  resources :orders, only: [ :show ] do
     resources :reviews, only: [ :new, :create ]
   end
 
