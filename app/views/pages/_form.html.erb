@@ -1,0 +1,20 @@
+<div class="container">
+  <%= simple_form_for @meal do |f| %>
+    <% if @meal.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @meal.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.input :quantity %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
