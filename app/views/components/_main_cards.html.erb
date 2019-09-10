@@ -1,7 +1,7 @@
 <div class="cards-container">
   <div class="cards">
     <% meals.each do |meal| %>
-      <%= link_to meal_path(meal) do %>
+      <%= link_to meal_path(meal), class: 'link-to-text-color' do %>
         <div class="card-trip">
           <img src=<%= meal.photo %> />
           <div class="card-trip-infos">
