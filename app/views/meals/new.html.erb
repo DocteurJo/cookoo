@@ -1,1 +1,12 @@
-new.html.erb
+<div class="container">
+  <h1> Add a new meal</h1>
+  <%= simple_form_for @meal do |f| %>
+  <%= f.input :category %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :quantity %>
+  <%= f.input :photo %>
+  <%= f.submit "add your new meal", class: "btn btn-primary" %>
+<% end %>
+</div>
