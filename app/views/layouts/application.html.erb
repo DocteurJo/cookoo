@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+    shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
     <title>TODO</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -10,8 +12,17 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+<<<<<<< HEAD
+    <%= render 'components/navbar' %>
+=======
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+>>>>>>> 0be518ef27c0f1cb23b07504dd69649812939a51
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
+  <footer>
+  <%= render 'components/footer' %>
+  </footer>
 </html>
