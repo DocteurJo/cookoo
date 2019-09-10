@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Order.destroy_all
+Meal.destroy_all
+User.destroy_all
+
+
 tayler = User.create!(first_name:"Tayler", last_name:"Johnson", address:"16 rua Gloria", photo:"https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjE_KbLvsbkAhVDJrkGHTSrCLEQjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fwww.jeancoutu.com%252Fphoto%252Fconseils-photo%252Freseaux-sociaux-photo-de-profil%252F%26psig%3DAOvVaw3GLA3g4YzeHMm_aHz_-LMA%26ust%3D1568212935524878&psig=AOvVaw3GLA3g4YzeHMm_aHz_-LMA&ust=1568212935524878", email:"tjohnson@gmail.com", password:"123456")
 joseph = User.create!(first_name:"Joseph", last_name:"Scemama", address:"20 rua barao", photo:"https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjE_KbLvsbkAhVDJrkGHTSrCLEQjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fwww.jeancoutu.com%252Fphoto%252Fconseils-photo%252Freseaux-sociaux-photo-de-profil%252F%26psig%3DAOvVaw3GLA3g4YzeHMm_aHz_-LMA%26ust%3D1568212935524878&psig=AOvVaw3GLA3g4YzeHMm_aHz_-LMA&ust=1568212935524878", email:"j.scemamma@gmail.com", password:"12345678")
 cook = Cook.create!(first_name:"Mohammed", last_name:"Refai", address:"20 rua barao de guaratiba", photo:"https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjE_KbLvsbkAhVDJrkGHTSrCLEQjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fwww.jeancoutu.com%252Fphoto%252Fconseils-photo%252Freseaux-sociaux-photo-de-profil%252F%26psig%3DAOvVaw3GLA3g4YzeHMm_aHz_-LMA%26ust%3D1568212935524878&psig=AOvVaw3GLA3g4YzeHMm_aHz_-LMA&ust=1568212935524878", email:"refai@gmail.com", password:"12345678910")
@@ -27,4 +32,4 @@ Meal.create!(category: "Japanese", title: "Miso soup", description: "Lorem ipsum
 Meal.create!(category: "Japanese", title: "Miso soup", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", price: 18, quantity: 45, photo: "https://flockler.com/thumbs/sites/192/one_pot_wonders_6_153_img_s1200x630_c1960x1144_l0x825.jpg", cook: cook)
 Meal.create!(category: "Japanese", title: "Miso soup", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", price: 18, quantity: 45, photo: "https://flockler.com/thumbs/sites/192/one_pot_wonders_6_153_img_s1200x630_c1960x1144_l0x825.jpg", cook: cook)
 
-order = Order.create(time:Time.now, user:User.last, meal:Meal.first)
+order = Order.create(time:Time.now, user:User.last, meal:Meal.first, quantity:4)
