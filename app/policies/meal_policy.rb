@@ -9,11 +9,11 @@ class MealPolicy < ApplicationPolicy
     true
   end
 
-  def create?
+  def show?
     true
   end
 
-  def show?
-    true
+  def create?
+    (@user.class == Cook)
   end
 end
