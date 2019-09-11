@@ -25,7 +25,7 @@
         <%= image_tag ("TJ_avatar.JPEG"), class: "avatar dropdown-toggle", id: "dropdownMenuButton", data: {toggle: "dropdown"} %>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Profile</a>
-          <a class="dropdown-item" href="#">My Order</a>
+          <%= link_to "My Order", order_path(current_user), class: "dropdown-item"  %>
           <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
         </div>
       </div>

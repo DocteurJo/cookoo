@@ -20,6 +20,10 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.cards .category-link :hover {
+  color: white;
+}
+
 .cards a {
   text-decoration: none;
 }
