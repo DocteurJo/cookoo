@@ -16,4 +16,8 @@ class MealPolicy < ApplicationPolicy
   def create?
     (@user.class == Cook)
   end
+
+  def category?
+    true
+  end
 end
