@@ -12,12 +12,4 @@ class User < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  
-  def average_rating
-    counter = 0
-    self.orders.each do |order|
-        counter += order.rating
-        end
-    average_rating = (counter / self.orders.count).to_i
-  end
 end
