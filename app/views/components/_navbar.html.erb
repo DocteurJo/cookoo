@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">COOKOO</a>
+  <%= link_to "COOKOO", meals_path, class: "navbar-brand"%>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,13 +17,31 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">📍</button>
       </form>
     </div>
-    <div class="dropdown dropleft">
-      <%= image_tag ("TJ_avatar.JPEG"), class: "avatar dropdown-toggle", id: "dropdownMenuButton", data: {toggle: "dropdown"} %>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Profile</a>
-        <a class="dropdown-item" href="#">My Order</a>
-        <a class="dropdown-item" href="#">Log Out</a>
+
+    <% if user_signed_in? %>
+
+      <! ---- Profile picture & dropdown ---->
+      <div class="dropdown dropleft">
+        <%= image_tag ("TJ_avatar.JPEG"), class: "avatar dropdown-toggle", id: "dropdownMenuButton", data: {toggle: "dropdown"} %>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#">My Order</a>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <! ---- Log in / Sign up ---->
+      <div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link"  %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Log In", new_user_session_path, class: "nav-link"  %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+
   </div>
 </nav>
