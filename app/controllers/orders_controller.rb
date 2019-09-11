@@ -5,6 +5,14 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @meal = @order.meal
+    @cooks = Cook.geocoded
+    @cook = @meal.cook
+    @marker = {
+      lat: @cook.latitude,
+      lng: @cook.longitude
+    }
+
     authorize @order
   end
 
