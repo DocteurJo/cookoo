@@ -17,14 +17,12 @@
             </div>
       </div>
     </div>
-
-    <div class="card-product-other-meals">
-      <h3>Other chef's meals</h3>
-        <div class="cards">
-          <div class="card-other-meals">
-            <img src="https://images.unsplash.com/photo-1468777675496-5782faaea55b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />
-            <p>Name of the meal</p>
-          </div>
-        </div>
-    </div>
+    <br> <br>
+    <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-marker="<%= @marker.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 </div>
