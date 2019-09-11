@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :meals, only: [ :index, :show, :new, :create ] do
     resources :orders, only: :create
+    collection do
+      get 'category'
+    end
   end
 
   resources :orders, only: [ :show ] do

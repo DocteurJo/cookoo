@@ -1,4 +1,4 @@
-class MealPolicy < ApplicationPolicy
+class OrderPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,18 +6,14 @@ class MealPolicy < ApplicationPolicy
   end
 
   def index?
-    true
-  end
-
-  def show?
-    true
-  end
-
-  def create?
     (@user.class == Cook)
   end
 
-  def category?
+  def show?
+    (@user == @record.user)
+  end
+
+  def create?
     true
   end
 end

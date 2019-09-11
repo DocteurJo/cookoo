@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  skip_before_action :authenticate_user!, only: [ :index, :show, :category ]
+
   def index
     @meals = policy_scope(Meal).all
   end
@@ -9,6 +10,12 @@ class MealsController < ApplicationController
     authorize @meal
     @order = @meal.orders.new
     @user = @meal.cook
+    @cooks = Cook.geocoded
+    @cook = @meal.cook
+    @marker = {
+      lat: @cook.latitude,
+      lng: @cook.longitude
+    }
   end
 
   def new
@@ -26,6 +33,13 @@ class MealsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def category
+    @parameter = params[:search].capitalize
+    @results = Meal.where(category: @parameter)
+
+    authorize :meal, @meal
   end
 
   private

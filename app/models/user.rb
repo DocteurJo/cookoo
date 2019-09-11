@@ -10,6 +10,9 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+  
   def average_rating
     counter = 0
     self.orders.each do |order|
