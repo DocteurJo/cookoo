@@ -6,10 +6,12 @@
 
   <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
     <div class="forms">
-      <form class="search-form d-inline form-inline my-2 my-lg-0 mr-2">
-        <input class="form-control mr-sm-2" type="search" placeholder="tacos, Japanese..." aria-label="Search" id="type">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Find Food</button>
-      </form>
+      <%= form_tag(category_meals_path, :method => "get",
+          class: 'search-form d-inline form-inline my-2 my-lg-0 mr-2') do %>
+        <%= search_field_tag :search, params[:search], placeholder: "French,  Brazilian...", class: "form-control mr-sm-2", id: "type" %>
+        <%= button_tag "Find Food", class: "btn btn-outline-success my-2 my-sm-0",
+            :name => nil%>
+      <% end %>
       <form class="d-inline form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Change Location" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">📍</button>
