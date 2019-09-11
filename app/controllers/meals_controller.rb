@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :category ]
+
   def index
     @meals = policy_scope(Meal).all
   end
@@ -28,9 +29,10 @@ class MealsController < ApplicationController
   end
 
   def category
-    @parameter = params[:search].downcase
-    @results = Meal.all.where("category LIKE :search", search: @parameter)
-    authorize @meal
+    @parameter = params[:search].capitalize
+    @results = Meal.where(category: @parameter)
+
+    authorize :meal, @meal
   end
 
   private
