@@ -13,7 +13,7 @@
           <div class="border-bottom"> <p><%= @meal.description %> | <%= @meal.category %></p>
           </div>
             <div class="order-form">
-              <%= render(current_user ? "form" : "call_to_authenticate") %>
+              <%= render("form") %>
             </div>
       </div>
     </div>
