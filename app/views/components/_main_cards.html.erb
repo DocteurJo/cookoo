@@ -10,8 +10,10 @@
               <p><%= meal.category %></p>
               <p class="card-trip-pricing">EUR <%= meal.price %></p>
             </div>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-            <i class="fas fa-star"></i>
+            <img src="<%= meal.cook.photo%>" class="card-trip-user avatar-bordered" />
+            <div>
+              <i class="fas fa-star"></i>
+            </div>
           </div>
         </div>
       <% end %>

@@ -2,15 +2,21 @@
   <div class="main-banner">
     <h2> <%= @meal.title %></h2>
       <div class="chef-banner">
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        <br>
-      <i class="fas fa-star"></i>
+        <img src="<%= @meal.cook.photo %>" class="card-trip-user avatar-bordered" />
       </div>
-  </div>
+        <div class="chef-reviews">
+        <% @user.average_rating.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <br />
+       <%= link_to "reviews" %>
+      </div>
+</div>
 
-    <div class="card-meal">
+
+    <div class="card-meal" style="background-image: url(<%= @meal.photo %>);">
       <div class="meal-order">
-          <div class="border-bottom"> <p><%= @meal.description %> | <%= @meal.category %></p>
+          <div class="border-bottom"> <p><%= @meal.description %> | <strong><%= @meal.category %></strong></p>
           </div>
             <div class="order-form">
               <%= render("form") %>
