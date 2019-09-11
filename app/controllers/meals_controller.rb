@@ -8,6 +8,12 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
     authorize @meal
     @order = @meal.orders.new
+    @cooks = Cook.geocoded
+    @cook = @meal.cook
+    @marker = {
+      lat: @cook.latitude,
+      lng: @cook.longitude
+    }
   end
 
   def new
