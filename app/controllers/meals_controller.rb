@@ -27,6 +27,10 @@ class MealsController < ApplicationController
     end
   end
 
+  def category
+
+  end
+
   private
 
   def meal_params
