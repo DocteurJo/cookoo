@@ -1,12 +1,12 @@
 <div class="container d-flex justify-content-center">
   <div class="cards-container">
-    <div>
-      <h2><%= @parameter.capitalize %> meals near you</h2><br>
-    </div>
     <% if @results.length == 0 %>
-      <h4> 😩 There are no <%= @parameter.capitalize %> meals today. Try another search!</h4>
+      <br><h4> 😩 There are no <%= @parameter.capitalize %> meals today. Try another search!</h4>
       <h4> </h4>
     <% else %>
+      <div>
+        <h2><%= @parameter.capitalize %> meals near you</h2><br>
+      </div>
       <%= render 'components/main_cards', meals: @results %>
     <% end %>
   </div>
