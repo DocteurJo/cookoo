@@ -1,3 +1,21 @@
+.meal-infos {
+  float: left;
+}
+
+.rating-index {
+  margin-right: 2px;
+  margin-top: 8px;
+  text-align: right;
+
+  i {
+    color: red;
+  }
+
+  a {
+    font-size: .8rem;
+  }
+}
+
 .card-trip {
   overflow: hidden;
   height: 280px;
@@ -27,7 +45,6 @@
 
 .card-trip .card-trip-infos {
   padding: 16px;
-  display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
@@ -41,10 +58,7 @@
 }
 
 .card-trip-infos .fas {
-  position: absolute;
-  right: 6px;
-  top: 28px;
-  width: 40px;
+  width: 16px;
 }
 
 .link-to-text-color {
@@ -52,5 +66,6 @@
 }
 
 .link-to-text-color :hover {
-  color: black;
+  color: #6b5f4e;
 }
+
