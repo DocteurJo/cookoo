@@ -1,0 +1,42 @@
+.cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 290px;
+  border: 1px solid rgba(0,0,0,.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  padding: 20px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.card h3 {
+  font-size: 16px;
+}
+
+.card p {
+  color: black;
+}
+
+.card-profile {
+  width: auto;
+  height: 70px;
+  padding: 10px;
+  text-align: left;
+  border-radius: 3px;
+  margin-left: 8px;
+}
+
+.card-profile p {
+  font-size: 14px;
+}
+
+.card-about {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
