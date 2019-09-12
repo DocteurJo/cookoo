@@ -1,78 +1,81 @@
 <div class="container">
-  <h1>Dashboards#index</h1>
-  <p>Find me in app/views/dashboards/index.html.erb</p>
-  <div class="cards-container">
+  <h1>Dashboard</h1>
+  <p><%= Date.today.to_formatted_s(:long) %></p>
 
-    <div class="card-profile">
+  <div class="container">
 
-      <div class="card-header">
-        <img src="" alt="">
-        <div class="card-name">
-          <h3></h3>
-          <p></p>
-        </div>
-      </div>
+    <div class="row">
+      <div class="col-4 card-profile">
 
-      <div class="card-order-summary">
-        <div class="card-orders-new">
+        <div class="card-header">
           <img src="" alt="">
-          <h4></h4>
-          <p></p>
-        </div>
-        <div class="card-orders-done">
-          <img src="" alt="">
-          <h4></h4>
-          <p></p>
-        </div>
-      </div>
-
-      <div class="card-profile-info">
-        <h4></h4>
-        <p></p>
-        <div class="card">
-          <h4></h4>
-          <p></p>
-        </div>
-        <div class="card">
-          <h4></h4>
-          <p></p>
-        </div>
-        <div class="card">
-          <h4></h4>
-          <p></p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="card-dashboard">
-
-      <div class="card-meal">
-
-        <div class="card-meal-of-day">
-          <h2></h2>
+          <div class="card-name">
+            <h3></h3>
+            <p></p>
+          </div>
         </div>
 
-        <div class="card-meals">
-          <div class="card-past-meals"></div>
-          <button></button>
-        </div>
-
-      </div>
-
-      <h2>ORDERS</h2>
-      <div class="orders-container">
-        <div class="order-card">
-          <img src="" alt="">
-          <div class="order-info">
+        <div class="card-order-summary">
+          <div class="card-orders-new">
+            <img src="" alt="">
+            <h4></h4>
+            <p></p>
+          </div>
+          <div class="card-orders-done">
+            <img src="" alt="">
             <h4></h4>
             <p></p>
           </div>
         </div>
+
+        <div class="card-profile-info">
+          <h4></h4>
+          <p></p>
+          <div class="card">
+            <h4></h4>
+            <p></p>
+          </div>
+          <div class="card">
+            <h4></h4>
+            <p></p>
+          </div>
+          <div class="card">
+            <h4></h4>
+            <p></p>
+          </div>
+        </div>
+
       </div>
 
-    </div>
+      <div class="col-8 card-dashboard">
 
+        <div class="card-meal">
+
+          <div class="card-meal-of-day">
+            <h2></h2>
+          </div>
+
+          <div class="card-meals">
+            <div class="card-past-meals"></div>
+            <button></button>
+          </div>
+
+        </div>
+
+        <h4>ORDERS</h4>
+
+        <div class="card-order">
+          <div class="order-card">
+            <img src="" alt="">
+            <div class="order-info">
+              <h4></h4>
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
 
