@@ -35,6 +35,7 @@ Meal.create!(category: "Japanese", title: "Miso soup", description: "Lorem ipsum
 Meal.create!(category: "Japanese", title: "Miso soup", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", price: 18, quantity: 45, photo: "https://flockler.com/thumbs/sites/192/one_pot_wonders_6_153_img_s1200x630_c1960x1144_l0x825.jpg", cook: constance)
 
 
-order = Order.create(time:Time.now, user:User.last, meal:fries, quantity:4, rating:5)
-order = Order.create(time:Time.now, user:User.last, meal:fries, quantity:4, rating:2)
-
+order = Order.create(time:Time.now, user:User.last, meal:fries, quantity:4, rating:5, review: "Amazing food")
+order = Order.create(time:Time.now, user:User.last, meal:fries, quantity:4, rating:2, review: "No ketchup included")
+order = Order.create(time:Time.now, user:User.last, meal:fries, quantity:2, rating:3, review: "Seems to be like home")
+order = Order.create(time:Time.now, user:User.last, meal:fries, quantity:2, rating:1, review: "Terrible")
