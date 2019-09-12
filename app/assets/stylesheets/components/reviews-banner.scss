@@ -1,0 +1,26 @@
+.reviews-banner {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 12px;
+  padding: 17px;
+}
+
+.chef-reviews-rating {
+  margin-right: 12px;
+  margin-top: -15px;
+  margin-left: 8px;
+
+  i {
+    color: yellow;
+    margin-top: 16px;
+  }
+
+  a {
+    font-size: .8rem;
+  }
+}
+
+.chef-banner-photo {
+  width: 500px;
+  margin-bottom: 18px;
+}
