@@ -16,4 +16,8 @@ class OrderPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def review_save?
+    true
+  end
 end

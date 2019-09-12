@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: [ :show ] do
-    resources :reviews, only: [ :new, :create ]
-  end
+  resources :orders, only: [ :show ]
 
   resources :dashboards, only: [ :index ]
+
+  patch '/orders/:id/review_save', to: 'orders#review_save', as:'review_save'
 end
