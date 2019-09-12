@@ -3,14 +3,14 @@
     <% meals.each do |meal| %>
       <%= link_to meal_path(meal), class: 'link-to-text-color' do %>
         <div class="card-trip">
-          <img src=<%= meal.photo %> />
+          <%= cl_image_tag meal.photo, height: 300, width: 400, crop: :fill %>
           <div class="card-trip-infos">
             <div>
               <h2><%= meal.title %></h2>
               <p><%= meal.category %></p>
               <p class="card-trip-pricing">EUR <%= meal.price %></p>
             </div>
-            <img src="<%= meal.cook.photo%>" class="card-trip-user avatar-bordered" />
+            <%= cl_image_tag meal.cook.photo, height: 300, width: 400, crop: :fill %>
             <div>
               <i class="fas fa-star"></i>
             </div>
