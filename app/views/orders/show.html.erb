@@ -16,6 +16,16 @@
     <div class="card-footer text-muted">
       Thank You 😎
     </div>
+
+    <div class="card-footer text-muted">
+      And don't forget to leave a review !
+    </div>
+    <%= simple_form_for @order, url: review_save_path do |f| %>
+    <%= f.input :rating %>
+    <%= f.input :review %>
+    <%= f.submit "add a review", class: "btn btn-primary" %>
+    <% end %>
+    <br><br>
     <div
       id="map"
       style="width: 100%;

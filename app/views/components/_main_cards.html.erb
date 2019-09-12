@@ -6,15 +6,21 @@
           <img src=<%= meal.photo %> />
           <div class="card-trip-infos">
             <div>
-              <h2><%= meal.title %></h2>
-              <p><%= meal.category %></p>
-              <p class="card-trip-pricing">EUR <%= meal.price %></p>
+              <div class="meal-infos">
+                <h2><%= meal.title %></h2>
+                <p><%= meal.category %></p>
+                <p class="card-trip-pricing">EUR <%= meal.price %></p>
+              </div>
             </div>
             <img src="<%= meal.cook.photo%>" class="card-trip-user avatar-bordered" />
             <div>
 
+            <div class="rating-index" style="">
+              <% meal.cook.average_rating.times do %>
+
               <i class="fas fa-star"></i>
-            </div>
+              <% end %>
+             </div>
           </div>
         </div>
       <% end %>
