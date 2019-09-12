@@ -18,4 +18,5 @@ class Cook < User
       average_rating = (counter / rated_orders.count).to_i
     end
   end
+
 end
