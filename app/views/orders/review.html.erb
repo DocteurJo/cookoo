@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="main-banner">
+    <h2> <%= @meal.title %></h2>
+      <div class="chef-banner">
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <br>
+      <i class="fas fa-star"></i>
+      </div>
+  </div>
+
+    <div class="card-meal">
+      <div class="meal-order">
+          <div class="border-bottom"> <p><%= @meal.description %> | <%= @meal.category %></p>
+          </div>
+            <div class="order-form">
+              <%= render(current_user ? "form" : "call_to_authenticate") %>
+            </div>
+      </div>
+    </div>
+
+    <div class="card-product-other-meals">
+      <h3>Other chef's meals</h3>
+        <div class="cards">
+          <div class="card-other-meals">
+            <img src="https://images.unsplash.com/photo-1468777675496-5782faaea55b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />
+            <p>Name of the meal</p>
+          </div>
+        </div>
+    </div>
+</div>
