@@ -5,7 +5,7 @@
     </div>
     <div class="card-body">
       <h5 class="card-title">ORDER SUMMARY</h5><br>
-      <p class="card-text"><strong>PICK UP TIME:</strong><br><%= @order.time %></p><br>
+      <p class="card-text"><strong>PICK UP TIME:</strong><br><%= @order.time.strftime('%H:%M %p') %></p><br>
       <p class="card-text"><strong>YOUR MEAL OF THE DAY:</strong><br>
         <%= @order.meal.title %> x <%= @order.meal.quantity %>
       </p>
