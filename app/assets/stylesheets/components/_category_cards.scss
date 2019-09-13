@@ -20,8 +20,9 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.cards .category-link :hover {
-  color: white;
+.card-category :hover {
+  color: #f4f4f4;
+  background-image: linear-gradient(rgba(0,0,0,3.3), rgba(0,0,0,0.1));
 }
 
 .cards a {

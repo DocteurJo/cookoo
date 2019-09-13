@@ -83,4 +83,3 @@ order = Order.create(time:Time.now, user:usered.sample, meal:fooder.sample, quan
 order = Order.create(time:Time.now, user:usered.sample, meal:fooder.sample, quantity:rater.sample, rating:rater.sample)
 order = Order.create(time:Time.now, user:usered.sample, meal:fooder.sample, quantity:rater.sample, rating:rater.sample)
 order = Order.create(time:Time.now, user:usered.sample, meal:fooder.sample, quantity:rater.sample, rating:rater.sample)
-
