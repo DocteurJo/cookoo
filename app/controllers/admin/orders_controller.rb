@@ -1,7 +1,8 @@
 class Admin::OrdersController < ApplicationController
   def index
-    @cook_orders = current_user.meals.orders
-    @orders = @cook_orders.sort_by(:time)
+    @daily_meal = current_user.daily_meal_id
+    @cook_orders = @daily_meal.orders
+    @orders = @cook_orders.sort_by(:completed)
   end
 
   def update
