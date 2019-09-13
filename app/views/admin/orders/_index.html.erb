@@ -5,7 +5,7 @@
 <% else %>
   <% @meal = Meal.find(@daily_meal.to_i) %>
   <% @cook_orders = @meal.orders %>
-  <% @orders = @cook_orders.sort_by { |order| order.completed } %>
+  <% @orders = @cook_orders.sort_by { |order| order.time } %>
 
   <% @orders.each do |order| %>
     <div class="d-flex justify-content-around mb-3">
