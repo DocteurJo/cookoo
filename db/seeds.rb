@@ -11,7 +11,7 @@ Meal.destroy_all
 User.destroy_all
 
 
-tayler = User.create!(first_name:"Tayler", last_name:"Johnson", address:"Ladeira da Gloria", photo:"https://upload.wikimedia.org/wikipedia/commons/7/75/Joseph_Morgan_at_PaleyFest_2014.jpg", email:"tjohnson@gmail.com", password:"12345678")
+tayler = User.create!(first_name:"Tayler", last_name:"Johnson", address:"Ladeira da Gloria", photo:"https://upload.wikimedia.org/wikipedia/commons/7/75/Joseph_Morgan_at_PaleyFest_2014.jpg", email:"tjohnson@gmail.com", password:"123456789")
 michael = Cook.create!(first_name:"Michael", last_name:"Scott", address:"R. do Catete, 120 ", photo:"https://upload.wikimedia.org/wikipedia/en/d/dc/MichaelScott.png", email:"michael@gmail.com", password:"scranton")
 dwight = Cook.create!(first_name:"Dwight", last_name:"Schrute", address:"Praia de Botafogo, 96", photo:"https://upload.wikimedia.org/wikipedia/en/c/cd/Dwight_Schrute.jpg", email:"schrute@gmail.com", password:"beetsfarm")
 jim = Cook.create!(first_name:"Jim", last_name:"Halpert", address:"R. Mena Barreto, 143", photo:"https://en.wikipedia.org/wiki/File:John_Krasinski_and_Josh_Wood_(cropped).jpg", email:"jim@gmail.com", password:"pamisfam")
