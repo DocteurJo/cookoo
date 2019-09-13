@@ -52,21 +52,23 @@
           <div class="card p-2 mb-3 text-center">
 
             <h3 style="background-color: #1EDD88;">MY MEAL OF THE DAY</h3>
-            <% if current_user.daily_meal.nil? %>
-              <h4>Please set your meal of the day.</h4>
-            <% else %>
-              <h4><%= current_user.daily_meal %></h4>
-            <% end %>
-            <%= render "admin/meals/index" %>
 
-
+            <div class="d-flex justify-space-around">
+              <% if current_user.daily_meal.nil? %>
+                <div>h4>[Please set your meal of the day]</h4></div>
+              <% else %>
+                <div><%= render 'components/dashboard_card', meals: [current_user.daily_meal] %></div>
+              <% end %>
+              <div class="pt-5" style="width: 900px;"><%= render "admin/meals/index", user: current_user %></div>
+            </div>
+            <br><br>
             <h4 class="text-left">ORDERS</h4>
             <div class="card p-3 mb-3 text-center">
               <h2></h2>
             </div>
+          </div>
 
         </div>
-
       </div>
     </div>
   </div>

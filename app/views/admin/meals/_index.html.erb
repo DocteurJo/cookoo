@@ -1,8 +1,10 @@
-<%= simple_form_for @user do |f| %>
-    <div class="form-group">
+<%= simple_form_for user, url: dashboard_path(user) do |f| %>
+    <div class="form-group mt-3" id="search-meals">
       <%= f.input :daily_meal, label: false, collection: @meals, include_blank: true%>
     </div>
-    <div class="left">
-      <%= f.submit 'Update', class: "btn btn-primary", data: {toggle: "modal", target: "#myModal"}%>
+    <div class="m-3 text-center">
+      <%= f.submit 'Update', class: "btn btn-primary"%>
     </div>
 <% end %>
+
+<%= button_to "+ New Meal", new_meal_path, class: "btn btn-primary", :method => "get" %>
