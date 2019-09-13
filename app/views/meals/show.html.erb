@@ -11,10 +11,17 @@
         <% @cook.average_rating.times do %>
           <i class="fas fa-star"></i>
         <% end %>
+        <div>
+          <% if @orders_reviews.count == 0%>
+            <p>0 review</p>
+            <% else %>
+            <p><%= @orders_reviews.count %> reviews</p>
+          <% end %>
+        </div>
         <br />
       </div>
-        <p><%= @cook.first_name %> <strong><%= @cook.last_name %></strong> meal of the day : </p>
-          <p style="font-style: italic;"><%= @meal.description %></p>
+        <p style="text-align: center;"><%= @cook.first_name %> <strong><%= @cook.last_name %></strong> meal of the day : </p>
+          <p style="font-style: italic; text-align: center;"><%= @meal.description %></p>
     </div>
 
 
