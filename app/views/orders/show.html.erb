@@ -21,7 +21,7 @@
       And don't forget to leave a review !
     </div>
     <%= simple_form_for @order, url: review_save_path do |f| %>
-    <%= f.input :rating, collection: 1..5 %>
+    <%= f.input :rating, collection: 1..5, selected: 5 %>
     <%= f.input :review %>
     <%= f.submit "add a review", class: "btn btn-flat" %>
     <% end %>
