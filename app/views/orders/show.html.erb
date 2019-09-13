@@ -21,11 +21,12 @@
       And don't forget to leave a review !
     </div>
     <%= simple_form_for @order, url: review_save_path do |f| %>
-    <%= f.input :rating %>
+    <%= f.input :rating, collection: 1..5 %>
     <%= f.input :review %>
-    <%= f.submit "add a review", class: "btn btn-primary" %>
+    <%= f.submit "add a review", class: "btn btn-flat" %>
     <% end %>
     <br><br>
+
     <div
       id="map"
       style="width: 100%;
@@ -35,3 +36,10 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $j("<%= "#stars-wrapper" << @order.id.to_s %>").stars({
+    callback: function(value, link){
+      document.getElementById("starbutton").click();
+    }
+  });
+</script>
