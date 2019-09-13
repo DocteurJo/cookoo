@@ -3,7 +3,7 @@
     <%= image_tag (order.user.photo), class: "avatar mt-2" %>
     <div class="card" style="width: 70%;">
       <div class="d-flex justify-content-between pb-0">
-        <div class="text-left p-2" style="height: 85px; font-size: 12px;">
+        <div class="text-left p-2 mt-1" style="height: auto; font-size: 12px;">
           <p><strong><%= order.user.first_name %> <%= order.user.last_name %></strong>
           <br>Pick Up Time: <%= order.time.strftime('%H:%M %p') %>
           <br>Order: <%= order.meal.title %> x <%= order.quantity %>
