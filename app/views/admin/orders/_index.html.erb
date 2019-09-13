@@ -1,25 +1,35 @@
-<% @orders.each do |order| %>
-  <div class="d-flex justify-content-around mb-3">
-    <%= image_tag (order.user.photo), class: "avatar mt-2" %>
-    <div class="card" style="width: 70%;">
-      <div class="d-flex justify-content-between pb-0">
-        <div class="text-left p-2 mt-1" style="height: auto; font-size: 12px;">
-          <p><strong><%= order.user.first_name %> <%= order.user.last_name %></strong>
-          <br>Pick Up Time: <%= order.time.strftime('%H:%M %p') %>
-          <br>Order: <%= order.meal.title %> x <%= order.quantity %>
-          <br>Total: EUR €<%= order.meal.price * order.quantity %></p>
-        </div>
-        <div class="complete mr-4 mt-1">
-          <% if order.completed %>
-            <div class="mt-3">
-              <%= button_tag "Completed", class: "btn btn-success btn-sm my-2 my-sm-0" %>
-            </div>
-          <% else %>
-            <%= render "admin/orders/update", order: order %>
-          <% end %>
+<% @daily_meal = current_user.daily_meal_id %>
+
+<% if @daily_meal.nil? %>
+  <p>No orders.</p>
+<% else %>
+  <% @meal = Meal.find(@daily_meal.to_i) %>
+  <% @cook_orders = @meal.orders %>
+  <% @orders = @cook_orders.sort_by { |order| order.completed } %>
+
+  <% @orders.each do |order| %>
+    <div class="d-flex justify-content-around mb-3">
+      <%= image_tag (order.user.photo), class: "avatar mt-2" %>
+      <div class="card" style="width: 70%;">
+        <div class="d-flex justify-content-between pb-0">
+          <div class="text-left p-2 mt-1" style="height: auto; font-size: 12px;">
+            <p><strong><%= order.user.first_name %> <%= order.user.last_name %></strong>
+            <br>Pick Up Time: <%= order.time.strftime('%H:%M %p') %>
+            <br>Order: <%= order.meal.title %> x <%= order.quantity %>
+            <br>Total: EUR €<%= order.meal.price * order.quantity %></p>
+          </div>
+          <div class="complete mr-4 mt-1">
+            <% if order.completed %>
+              <div class="mt-3">
+                <%= button_tag "Completed", class: "btn btn-success btn-sm my-2 my-sm-0" %>
+              </div>
+            <% else %>
+              <%= render "admin/orders/update", order: order %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 
