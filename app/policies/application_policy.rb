@@ -44,6 +44,7 @@ class ApplicationPolicy
 
     def resolve
       scope.all
+      scope.current_user
     end
   end
 end

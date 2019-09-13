@@ -1,2 +1,85 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
+<div class="container">
+  <h1 class="navbar-brand" style="font-size: 30px;"><%= current_user.first_name %>'s Dashboard</h1>
+  <p><%= Date.today.to_formatted_s(:long) %></p>
+
+  <div class="container">
+
+    <div class="row">
+
+
+      <div class="col-4">
+      <! --- Profile bar ---->
+        <div class="card-prof-bar p-3 mt-3 mb-3">
+
+          <! --- Header ---->
+          <div class="cards-prof-bar">
+            <%= image_tag (current_user.photo), class: "avatar-dashboard" %>
+            <div class="card-profile">
+              <p class="mb-1"><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></p>
+              <p>
+                <% current_user.average_rating.times do %>
+                  <i class="fas fa-star" style="font-size: 18px; color: yellow;"></i>
+                <% end %>
+              </p>
+            </div>
+          </div>
+
+          <! --- Order cards ---->
+          <div class="cards-prof-bar">
+            <div class="card-prof-bar">
+              <i class="far fa-file-alt"></i>
+              <h3><%= @new_orders.length %></h3>
+              <p>New Orders</p>
+            </div>
+            <div class="card-prof-bar ml-2">
+              <i class="fas fa-file-alt"></i>
+              <h3><%= @complete_orders.length %></h3>
+              <p>Complete Orders</p>
+            </div>
+          </div>
+
+          <! --- About  ---->
+          <div class="card-about">
+            <p><strong>About Me</strong></p>
+            <p>Hi I'm Constance! I've been cooking all my life, and it's a real passion of mine. I'm excited to share my favorite reciptes with you all!</p>
+            <p><strong>Address</strong></p>
+            <p><%= current_user.address %></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-8">
+      <! --- Meal & orders section ---->
+        <div class="card-dash p-3 mt-3 mb-3">
+
+          <div class="card p-2 mb-3 text-center">
+
+            <h3 class="navbar-brand" style="font-size: 32px;">MY MEAL OF THE DAY</h3>
+
+            <div class="d-flex justify-space-around">
+              <% if current_user.daily_meal.nil? %>
+                <div class="card text-center p-3 mr-2" style="width: 500px;"><br><br>
+                  <p>[Please set your meal of the day]</p>
+                </div>
+              <% else %>
+                <div><%= render 'components/dashboard_card', meals: [current_user.daily_meal] %></div>
+              <% end %>
+              <div class="pt-5" style="width: 900px;"><%= render "admin/meals/index", user: current_user %></div>
+            </div>
+            <br><br>
+            <h4 class="text-left navbar-brand" style="font-size: 20px;">TODAY'S ORDERS</h4>
+            <div class="card p-3 mb-3 text-center">
+              <%= render "admin/orders/index" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
