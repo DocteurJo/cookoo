@@ -2,7 +2,7 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :category ]
 
   def index
-    @meals = policy_scope(Meal).all
+    @meals = Meal.all
   end
 
   def show

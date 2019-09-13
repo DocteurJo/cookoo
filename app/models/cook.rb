@@ -8,15 +8,22 @@ class Cook < User
 
   def average_rating
     counter = 0
-    rated_orders = self.orders.rated
-    rated_orders.each do |order|
-      counter += order.rating
+    meals = Meal.where(cook_id: self)
+    order_count = 0
+
+    meals.each do |meal|
+      order_count += meal.orders.count
+      rated_orders = meal.orders
+      rated_orders.each do |order|
+        counter += order.rating
+      end
     end
 
-    if rated_orders.count == 0
+    if counter.zero?
       average_rating = 0
     else
-      average_rating = (counter / rated_orders.count).to_i
+      average_rating = (counter / order_count).to_i
     end
+    average_rating
   end
 end
