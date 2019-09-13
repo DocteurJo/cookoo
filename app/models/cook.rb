@@ -11,6 +11,13 @@ class Cook < User
     self.orders.rated.each do |order|
       counter += order.rating
     end
-    average_rating = (counter / self.orders.rated.count).to_i
+
+    if counter.zero?
+      average_rating = 0
+    else
+      average_rating = (counter / self.orders.rated.count).to_i
+    end
+
+    average_rating
   end
 end

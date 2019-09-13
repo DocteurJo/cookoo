@@ -1,14 +1,20 @@
-<ul style="list-style-type: none">
-  <% @orders.each do |task| %>
-    <li>
-      <% if task.completed %>
-        <input type="checkbox" name="task[completed]" checked>
-      <% else %>
-        <input type="checkbox" name="task[completed]">
-      <% end %>
-      <%= link_to task.title, task_path(task) %>
-      <%= link_to "   • 💣", delete_path(task), method: :delete %>
-    </li>
-  <% end %>
-</ul>
-<p>---------------------------------------------------</p>
+<% @orders.each do |order| %>
+  <div class="d-flex justify-content-around mb-3">
+    <%= image_tag (order.user.photo), class: "avatar mt-2" %>
+    <div class="card" style="width: 70%;">
+      <div class="d-flex justify-content-between pb-0">
+        <div class="text-left p-2" style="height: 85px; font-size: 12px;">
+          <p><strong><%= order.user.first_name %> <%= order.user.last_name %></strong>
+          <br>Pick Up Time: <%= order.time.strftime('%H:%M %p') %>
+          <br>Order: <%= order.meal.title %> x <%= order.quantity %>
+          <br>Total: EUR €<%= order.meal.price * order.quantity %></p>
+        </div>
+        <div class="complete mr-4 mt-1">
+          <input type="checkbox" name="order[completed]">
+          <p style="font-size: 12px;">Complete</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+

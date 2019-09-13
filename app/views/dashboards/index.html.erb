@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>My Dashboard</h1>
+  <h1 class="navbar-brand" style="font-size: 30px;">My Dashboard</h1>
   <p><%= Date.today.to_formatted_s(:long) %></p>
 
   <div class="container">
@@ -51,7 +51,7 @@
 
           <div class="card p-2 mb-3 text-center">
 
-            <h3 style="background-color: #1EDD88;">MY MEAL OF THE DAY</h3>
+            <h3 class="navbar-brand" style="font-size: 32px;">MY MEAL OF THE DAY</h3>
 
             <div class="d-flex justify-space-around">
               <% if current_user.daily_meal.nil? %>
@@ -64,9 +64,9 @@
               <div class="pt-5" style="width: 900px;"><%= render "admin/meals/index", user: current_user %></div>
             </div>
             <br><br>
-            <h4 class="text-left">ORDERS</h4>
+            <h4 class="text-left navbar-brand" style="font-size: 20px;">TODAY'S ORDERS</h4>
             <div class="card p-3 mb-3 text-center">
-              <h2></h2>
+              <%= render "admin/orders/index" %>
             </div>
           </div>
 
