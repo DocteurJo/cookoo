@@ -38,7 +38,9 @@
       <div class="reviews-banner">
         <% if @orders_reviews.length > 0 %>
           <% @orders_reviews.each do |order| %>
-            <div class="review">
+            <% if order.rating == nil %>
+              <% else %>
+              <div class="review">
               <div class="chef-banner-photo" style="display: flex">
                 <img src="<%= order.user.photo %>" class="card-trip-user avatar-bordered" />
                 <div class="chef-reviews-rating">
@@ -51,9 +53,10 @@
                 </div>
               </div>
             </div>
+              <% end %>
             <% end %>
           <% else %>
-            <div><p>There is no review yet</p></div>
+            <div><p>There is no review yet 😥</p></div>
         <% end %>
       </div>
 
