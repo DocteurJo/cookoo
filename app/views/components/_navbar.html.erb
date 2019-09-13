@@ -20,15 +20,29 @@
 
     <% if user_signed_in? %>
 
-      <! ---- Profile picture & dropdown ---->
-      <div class="dropdown dropleft">
-        <%= image_tag ("TJ_avatar.JPEG"), class: "avatar dropdown-toggle", id: "dropdownMenuButton", data: {toggle: "dropdown"} %>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Profile</a>
-          <%= link_to "My Order", order_path(current_user), class: "dropdown-item"  %>
-          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+      <% if current_user.class == Cook %>
+
+        <! ---- Cook avatar dropdown ---->
+        <div class="dropdown dropleft">
+            <%= image_tag (current_user.photo), class: "avatar dropdown-toggle", id: "dropdownMenuButton", data: {toggle: "dropdown"} %>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Profile</a>
+            <%= link_to "My Dashboard", dashboards_path(current_user), class: "dropdown-item"  %>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+          </div>
         </div>
-      </div>
+      <% else %>
+        <! ---- User avatar & dropdown ---->
+        <div class="dropdown dropleft">
+          <%= image_tag (current_user.photo), class: "avatar dropdown-toggle", id: "dropdownMenuButton", data: {toggle: "dropdown"} %>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Profile</a>
+            <%= link_to "My Order", order_path(current_user), class: "dropdown-item"  %>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+          </div>
+        </div>
+      <% end %>
+
     <% else %>
       <! ---- Log in / Sign up ---->
       <div>

@@ -29,6 +29,8 @@ class MealsController < ApplicationController
     authorize @meal
 
     if @meal.save
+      @meal.cook.daily_meal = @meal
+      @meal.cook.save
       redirect_to meals_path
     else
       render :new

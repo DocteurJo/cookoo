@@ -12,6 +12,7 @@ class Cook < User
     rated_orders.each do |order|
       counter += order.rating
     end
+
     if rated_orders.count == 0
       average_rating = 0
     else
