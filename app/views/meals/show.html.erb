@@ -1,6 +1,9 @@
 <div class="container">
-  <div class="main-banner">
-    <h2> <%= @meal.title %></h2>
+    <div>
+      <h2><%= @meal.title %> | <%= @meal.category %></h2>
+    </div>
+
+    <div class="main-banner">
       <div class="chef-banner">
         <img src="<%= @meal.cook.photo %>" class="card-trip-user avatar-bordered" />
       </div>
@@ -8,22 +11,56 @@
         <% @cook.average_rating.times do %>
           <i class="fas fa-star"></i>
         <% end %>
+        <div>
+          <% if @orders_reviews.count == 0%>
+            <p>0 review</p>
+            <% else %>
+            <p><%= @orders_reviews.count %> reviews</p>
+          <% end %>
+        </div>
         <br />
-       <%= link_to "reviews" %>
       </div>
-</div>
+        <p style="text-align: center;"> Chef <%= @cook.first_name %> <strong><%= @cook.last_name %></strong> is glad to present you the meal of the day : </p>
+          <p style="font-style: italic; text-align: center;"><%= @meal.description %></p>
+    </div>
 
 
     <div class="card-meal" style="background-image: url(<%= @meal.photo %>);">
       <div class="meal-order">
-          <div class="border-bottom"> <p><%= @meal.description %> | <strong><%= @meal.category %></strong></p>
+          <div class="border-bottom"> <p><strong>EUR <%= @meal.price %></strong></p>
           </div>
             <div class="order-form">
               <%= render("form") %>
             </div>
       </div>
     </div>
-    <br> <br>
+
+      <div class="reviews-banner">
+        <% if @orders_reviews.length > 0 %>
+          <% @orders_reviews.each do |order| %>
+            <% if order.rating == nil %>
+              <% else %>
+              <div class="review">
+              <div class="chef-banner-photo" style="display: flex">
+                <img src="<%= order.user.photo %>" class="card-trip-user avatar-bordered" />
+                <div class="chef-reviews-rating">
+                  <% order.rating.to_i.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <div>
+                    <p><%= order.review %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <% end %>
+            <% end %>
+          <% else %>
+            <div><p>There is no review yet 😥</p></div>
+        <% end %>
+      </div>
+
+    <br>
     <div
   id="map"
   style="width: 100%;
