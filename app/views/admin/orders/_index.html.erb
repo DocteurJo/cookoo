@@ -11,10 +11,11 @@
         </div>
         <div class="complete mr-4 mt-1">
           <% if order.completed %>
-            <input type="checkbox" name="order[completed]" checked>
-            <p style="font-size: 12px;">Complete</p>
+            <div class="mt-3">
+              <%= button_tag "Completed", class: "btn btn-success btn-sm my-2 my-sm-0" %>
+            </div>
           <% else %>
-            <%= render "admin/orders/update" %>
+            <%= render "admin/orders/update", order: order %>
           <% end %>
         </div>
       </div>

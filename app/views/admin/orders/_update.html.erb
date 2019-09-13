@@ -1,7 +1,6 @@
-<%= form_for(@order) do |f| %>
-  <%= f.check_box :completed %>
-  <%= f.label :completed %>
-  <br>
-  <br>
-  <%= f.submit "Complete" %>
+<%= form_for(order, url: admin_order_path(order)) do |f| %>
+  <div>
+    <%= f.check_box :completed %>
+  </div>
+  <%= f.submit "Complete", class: "btn btn-outline-success btn-sm my-2 my-sm-0" %>
 <% end %>

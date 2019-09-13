@@ -5,10 +5,10 @@ class Admin::OrdersController < ApplicationController
   end
 
   def update
-    @cook_orders = current_user.meals.orders
-    @order = @cook_orders.find(params[:id])
-    authorize @order
+    @order = Order.find(params[:id])
     @order.update(order_params)
+    @order.save
+    redirect_to dashboards_path
   end
 
   private

@@ -16,7 +16,11 @@
             <%= image_tag (current_user.photo), class: "avatar-dashboard" %>
             <div class="card-profile">
               <p class="mb-1"><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></p>
-              <p>Rating <i class="fas fa-star" style="font-size: 15px;"></i> <%= current_user.average_rating %></p>
+              <p>
+                <% current_user.average_rating.times do %>
+                  <i class="fas fa-star" style="font-size: 18px; color: yellow;"></i>
+                <% end %>
+              </p>
             </div>
           </div>
 
