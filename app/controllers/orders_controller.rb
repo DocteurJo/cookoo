@@ -25,9 +25,18 @@ class OrdersController < ApplicationController
     redirect_to order_path(@order)
   end
 
+  def review_save
+    @order = Order.find(params[:id])
+    @order.rating = params[:order][:rating]
+    @order.review = params[:order][:review]
+    authorize @order
+    @order.save
+    redirect_to order_path
+  end
+
   private
 
   def order_params
-    params.require(:order).permit(:time, :quantity)
+    params.require(:order).permit(:time, :quantity, :rating, :review)
   end
 end

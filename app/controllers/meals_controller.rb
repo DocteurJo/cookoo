@@ -9,6 +9,7 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
     authorize @meal
     @order = @meal.orders.new
+    @orders_reviews = Order.joins(:user).where(meal_id: @meal.id).limit(5)
     @cooks = Cook.geocoded
     @cook = @meal.cook
     @marker = {

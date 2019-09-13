@@ -11,9 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: [ :show ] do
-    resources :reviews, only: [ :new, :create ]
-  end
+  resources :orders, only: [ :show ]
 
   resources :dashboards, only: [ :index, :update ]
 
@@ -24,4 +22,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :update]
     resources :daily_meal, only: [ :show ]
   end
+
+  patch '/orders/:id/review_save', to: 'orders#review_save', as:'review_save'
 end
