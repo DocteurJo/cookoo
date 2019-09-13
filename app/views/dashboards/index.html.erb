@@ -24,12 +24,12 @@
           <div class="cards-prof-bar">
             <div class="card-prof-bar">
               <i class="far fa-file-alt"></i>
-              <h3><%= current_user.orders.length %></h3>
+              <h3><%= @new_orders.length %></h3>
               <p>New Orders</p>
             </div>
             <div class="card-prof-bar ml-2">
               <i class="fas fa-file-alt"></i>
-              <h3>80</h3>
+              <h3><%= @complete_orders.length %></h3>
               <p>Complete Orders</p>
             </div>
           </div>

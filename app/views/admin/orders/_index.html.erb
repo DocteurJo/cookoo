@@ -10,8 +10,12 @@
           <br>Total: EUR €<%= order.meal.price * order.quantity %></p>
         </div>
         <div class="complete mr-4 mt-1">
-          <input type="checkbox" name="order[completed]">
-          <p style="font-size: 12px;">Complete</p>
+          <% if order.completed %>
+            <input type="checkbox" name="order[completed]" checked>
+            <p style="font-size: 12px;">Complete</p>
+          <% else %>
+            <%= render "admin/orders/update" %>
+          <% end %>
         </div>
       </div>
     </div>

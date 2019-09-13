@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :meals, only: [:index]
-    resources :orders, only: [:index :update]
+    resources :orders, only: [:index, :update]
     resources :daily_meal, only: [ :show ]
   end
 end

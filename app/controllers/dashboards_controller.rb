@@ -2,6 +2,8 @@ class DashboardsController < ApplicationController
   def index
     @orders = policy_scope(Order).all
     @meals = policy_scope(Meal).all
+    @new_orders = current_user.orders.where(completed: false)
+    @complete_orders = current_user.orders.where(completed: true)
   end
 
   def update

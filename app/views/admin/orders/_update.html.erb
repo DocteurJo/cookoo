@@ -1,0 +1,7 @@
+<%= form_for(@order) do |f| %>
+  <%= f.check_box :completed %>
+  <%= f.label :completed %>
+  <br>
+  <br>
+  <%= f.submit "Complete" %>
+<% end %>

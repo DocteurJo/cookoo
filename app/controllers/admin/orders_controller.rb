@@ -5,14 +5,15 @@ class Admin::OrdersController < ApplicationController
   end
 
   def update
-    @order = Order.find(params[:id])
+    @cook_orders = current_user.meals.orders
+    @order = @cook_orders.find(params[:id])
     authorize @order
-    @order.update(task_params)
+    @order.update(order_params)
   end
 
   private
 
-  def task_params
-    arams.require(:order).permit(:time, :quantity, :completed)
+  def order_params
+    params.require(:order).permit(:time, :quantity, :completed)
   end
 end
