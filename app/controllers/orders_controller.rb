@@ -39,5 +39,4 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:time, :quantity, :rating, :review)
   end
-
 end
