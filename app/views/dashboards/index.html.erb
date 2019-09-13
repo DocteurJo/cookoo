@@ -55,7 +55,9 @@
 
             <div class="d-flex justify-space-around">
               <% if current_user.daily_meal.nil? %>
-                <div>h4>[Please set your meal of the day]</h4></div>
+                <div class="card text-center p-3 mr-2"><br><br>
+                  <p>[Please set your meal of the day]</p>
+                </div>
               <% else %>
                 <div><%= render 'components/dashboard_card', meals: [current_user.daily_meal] %></div>
               <% end %>
