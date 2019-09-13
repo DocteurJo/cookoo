@@ -15,4 +15,12 @@ Rails.application.routes.draw do
   end
 
   resources :dashboards, only: [ :index ]
+
+  resources :cooks, only: [ :show ]
+
+  namespace :admin do
+    resources :meals, only: [:index]
+    resources :orders, only: [:index]
+    resources :daily_meal, only: [ :show ]
+  end
 end

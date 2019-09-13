@@ -6,12 +6,13 @@
 
     <div class="row">
 
-      <! --- Profile bar ---->
+
       <div class="col-4">
-        <div class="card p-3 mt-3 mb-3">
+      <! --- Profile bar ---->
+        <div class="card-prof-bar p-3 mt-3 mb-3">
 
           <! --- Header ---->
-          <div class="cards">
+          <div class="cards-prof-bar">
             <%= image_tag (current_user.photo), class: "avatar-dashboard" %>
             <div class="card-profile">
               <p class="mb-1"><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></p>
@@ -20,13 +21,13 @@
           </div>
 
           <! --- Order cards ---->
-          <div class="cards">
-            <div class="card">
+          <div class="cards-prof-bar">
+            <div class="card-prof-bar">
               <i class="far fa-file-alt"></i>
               <h3>50</h3>
               <p>New Orders</p>
             </div>
-            <div class="card ml-2">
+            <div class="card-prof-bar ml-2">
               <i class="fas fa-file-alt"></i>
               <h3>80</h3>
               <p>Complete Orders</p>
@@ -40,36 +41,30 @@
             <p><strong>Address</strong></p>
             <p><%= current_user.address %></p>
           </div>
-
         </div>
       </div>
 
+
+      <div class="col-8">
       <! --- Meal & orders section ---->
-      <div class="col-8 card-dashboard">
+        <div class="card-dash p-3 mt-3 mb-3">
 
-        <div class="card-meal">
+          <div class="card p-2 mb-3 text-center">
 
-          <div class="card-meal-of-day">
-            <h2></h2>
-          </div>
+            <h3 style="background-color: #1EDD88;">MY MEAL OF THE DAY</h3>
+            <% if current_user.daily_meal.nil? %>
+              <h4>Please set your meal of the day.</h4>
+            <% else %>
+              <h4><%= current_user.daily_meal %></h4>
+            <% end %>
+            <%= render "admin/meals/index" %>
 
-          <div class="card-meals">
-            <div class="card-past-meals"></div>
-            <button></button>
-          </div>
 
-        </div>
-
-        <h4>ORDERS</h4>
-
-        <div class="card-order">
-          <div class="order-card">
-            <img src="" alt="">
-            <div class="order-info">
-              <h4></h4>
-              <p></p>
+            <h4 class="text-left">ORDERS</h4>
+            <div class="card p-3 mb-3 text-center">
+              <h2></h2>
             </div>
-          </div>
+
         </div>
 
       </div>

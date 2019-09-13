@@ -1,10 +1,10 @@
-.cards {
+.cards-prof-bar {
   display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
 }
 
-.card {
+.card-prof-bar {
   width: 290px;
   border: 1px solid rgba(0,0,0,.1);
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
@@ -13,11 +13,11 @@
   border-radius: 3px;
 }
 
-.card h3 {
+.card-prof-bar h3 {
   font-size: 16px;
 }
 
-.card p {
+.card-prof-bar p {
   color: black;
 }
 
@@ -39,4 +39,12 @@
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: left;
+}
+
+.card-dash {
+  width: auto;
+  border: 1px solid rgba(0,0,0,.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  padding: 20px;
+  border-radius: 3px;
 }
