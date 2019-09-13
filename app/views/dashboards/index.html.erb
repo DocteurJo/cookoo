@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="navbar-brand" style="font-size: 30px;">My Dashboard</h1>
+  <h1 class="navbar-brand" style="font-size: 30px;"><%= current_user.first_name %>'s Dashboard</h1>
   <p><%= Date.today.to_formatted_s(:long) %></p>
 
   <div class="container">
@@ -24,7 +24,7 @@
           <div class="cards-prof-bar">
             <div class="card-prof-bar">
               <i class="far fa-file-alt"></i>
-              <h3>50</h3>
+              <h3><%= current_user.orders.length %></h3>
               <p>New Orders</p>
             </div>
             <div class="card-prof-bar ml-2">
