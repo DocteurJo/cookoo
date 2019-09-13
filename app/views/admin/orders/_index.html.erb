@@ -1,0 +1,14 @@
+<ul style="list-style-type: none">
+  <% @orders.each do |task| %>
+    <li>
+      <% if task.completed %>
+        <input type="checkbox" name="task[completed]" checked>
+      <% else %>
+        <input type="checkbox" name="task[completed]">
+      <% end %>
+      <%= link_to task.title, task_path(task) %>
+      <%= link_to "   • 💣", delete_path(task), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+<p>---------------------------------------------------</p>
