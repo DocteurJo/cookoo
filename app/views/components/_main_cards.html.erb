@@ -9,14 +9,18 @@
               <div class="meal-infos">
                 <h2><%= meal.title %></h2>
                 <p><%= meal.category %></p>
-                <p class="card-trip-pricing">EUR <%= meal.price %></p>
               </div>
             </div>
             <img src="<%= meal.cook.photo%>" class="card-trip-user avatar-bordered" />
-            <div class="rating-index" style="">
-              <% meal.cook.average_rating.times do %>
-              <i class="fas fa-star"></i>
-              <% end %>
+            <div class="d-flex justify-content-between rating-index" style="">
+              <div>
+                <p class="card-trip-pricing">EUR €<%= meal.price %></p>
+              </div>
+              <div>
+                <% meal.cook.average_rating.times do %>
+                <i class="fas fa-star"></i>
+                <% end %>
+              </div>
              </div>
           </div>
         </div>
